@@ -51,6 +51,7 @@
     bottom: 0;
     width: 240px;
     background: #F5F5F5;
+    overflow: auto;
   }
   .editcenter {
     position: absolute;
@@ -59,6 +60,7 @@
     left: 240px;
     right: 430px;
     background: #CCCCCC;
+    overflow: auto;
   }
   .editright1 {
     position: absolute;
@@ -67,6 +69,7 @@
     right: 70px;
     width: 360px;
     background: #FAFAFA;
+    overflow: auto;
   }
   .editright2 {
     position: absolute;
@@ -75,5 +78,12 @@
     right: 0px;
     width: 70px;
     background: #2D353D;
+    overflow: auto;
+  }
+  .wid100{
+    width:100% !important
+  }
+  .el-tree .is-current{
+    background: #E4E8F1;
   }
 </style>

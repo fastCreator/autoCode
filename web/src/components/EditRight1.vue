@@ -1,5 +1,6 @@
 <template>
   <div class="editright1">
+    <div class="title">{{title}}</div>
     <component :is="'nav-'+right1select"></component>
   </div>
 </template>
@@ -8,21 +9,37 @@
   import {
     mapState
   } from 'vuex'
+  import nav from '../config/nav'
   import navStyle from './EditRight1Child/navStyle'
+  import navRoutes from './EditRight1Child/navRoutes'
   export default {
     name: 'edit-right1',
     data() {
       return {}
     },
     computed: {
-      ...mapState(['right1select'])
+      ...mapState(['right1select']),
+      title(){ 
+        for(let item of nav){
+          console.log(item)
+            if(item.type ===this.right1select){
+                 return item.name;
+            }
+        }
+        return '无';
+      }
     },
     components: {
-      navStyle
+      navStyle,
+      navRoutes
     }
   }
 </script>
 
 <style scoped>
-
+  .title {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding: 6px 0;
+  }
 </style>
