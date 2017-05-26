@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <editHeader></editHeader>
-    <EditLeft></EditLeft>
-    <EditCenter></EditCenter>
-    <EditRight1></EditRight1>
-    <EditRight2></EditRight2>
+    <edit-header></edit-header>
+    <edit-left></edit-left>
+    <edit-center></edit-center>
+    <edit-right1></edit-right1>
+    <edit-right2></edit-right2>
   </div>
 </template>
 
@@ -33,7 +33,8 @@
   }
   .editheader {
     height: 70px;
-    background: #EDEDED;
+    background-color: #ededed;
+    border-bottom: 1px solid #bfbfbf;
   }
   #app {
     font-family: "PingHei","Lucida Grande","Lucida Sans Unicode","Helvetica","Arial","Verdana","sans-serif","Microsoft Yahei","微软雅黑";
@@ -48,15 +49,15 @@
     position: absolute;
     top: 70px;
     bottom: 0;
-    width: 270px;
+    width: 240px;
     background: #F5F5F5;
   }
   .editcenter {
     position: absolute;
     top: 70px;
     bottom: 0;
-    left: 270px;
-    right: 270px;
+    left: 240px;
+    right: 430px;
     background: #CCCCCC;
   }
   .editright1 {
@@ -64,7 +65,7 @@
     top: 70px;
     bottom: 0;
     right: 70px;
-    width: 270px;
+    width: 360px;
     background: #FAFAFA;
   }
   .editright2 {

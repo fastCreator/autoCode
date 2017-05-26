@@ -7,7 +7,7 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'editleft',
+  name: 'edit-left',
   data () {
     return {
        

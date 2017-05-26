@@ -1,25 +1,33 @@
-export const  state ={
-  routes:{
-    path:'',
-    component:null,
-    children:[],
+export const state = {
+  zoom:0.8,
+  routes: {
+    path: 'main',
+    component: null,
+    children: [],
   },
-  right1select:'',
-  right2select:['a','b'], 
-} 
+  components: [],
+  right1select: 'style',
+  right2select: [
+    'layout', 'router', 'color', 'import',
+    'state', 'API', 'data', 'computed', 'methods',
+    'lefe', 'ajax', 'routerhook', 'template'],
+}
 
 
 export const getters = {
 }
 
 export const mutations = {
-  right1go (state,type){ 
-    state.right1select =type
-  }   
+  right1go(state, value) {
+    state.right1select = value
+  },
+  setzoom(state, value){
+    state.zoom = value
+  }
 }
 
 export const actions = {
-   
+
 }
 
 

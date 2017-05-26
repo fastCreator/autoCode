@@ -1,16 +1,16 @@
 <template>
   <div class="editcenter">
-     
+
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'editCenter',
+  name: 'edit-center',
   data () {
     return {
-       
+
     }
   },
   computed:{
@@ -18,7 +18,7 @@ export default {
   }
 }
 </script>
- 
+
 <style scoped>
- 
+
 </style>
