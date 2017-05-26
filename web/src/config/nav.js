@@ -1,8 +1,7 @@
 export default [
           {
               name:'路由',
-              type:'routes'
-          
+              type:'routes' 
           },
           {
             //用于选择和添加布局

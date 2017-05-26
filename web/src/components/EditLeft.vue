@@ -28,7 +28,7 @@
         return true;
       },
       routerClick(item, data, node) {
-        this.right1go(['routes', item]);
+        this.right1go({type:'routes',route:item});
       },
       ...mapMutations([
         'right1go'

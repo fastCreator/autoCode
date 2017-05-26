@@ -3,7 +3,7 @@
     <div class="tools">
       <span>全局Router钩子</span> 缩放:
       <el-slider :value="zoom" @input="setzoom" :min="0.5" :max="1.5" :step="0.01"></el-slider>
-      <span>保存</span>
+      <span @click="saveRoutes">保存</span>
     </div>
   </div>
 </template>
@@ -12,18 +12,26 @@
   import {
     mapState,mapMutations
   } from 'vuex'
+  import {setState} from '../server/state.js'
   export default {
     name: 'edit-header',
     data() {
       return {}
     },
     computed: {
-      ...mapState(['zoom'])
+      ...mapState(['zoom','routes'])
     },
     methods: {
       ...mapMutations([
         'setzoom'
-      ])
+      ]),
+      saveRoutes(){
+        this.$message({
+              type: 'success',
+              message: '保存成功!'
+            });
+        setState(this.routes[0])
+      }
     }
   }
 </script>

@@ -20,8 +20,7 @@
     computed: {
       ...mapState(['right1select']),
       title(){ 
-        for(let item of nav){
-          console.log(item)
+        for(let item of nav){ 
             if(item.type ===this.right1select){
                  return item.name;
             }

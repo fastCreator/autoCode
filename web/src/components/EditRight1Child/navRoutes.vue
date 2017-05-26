@@ -11,7 +11,7 @@
     </el-row>
     <el-row>
       <el-col :span="6" :offset="1">
-        <el-button type="primary" @click="addRouter(pathname)">添加</el-button>
+        <el-button type="primary" @click="myaddRouter(pathname)">添加</el-button>
       </el-col>
       <el-col :span="15" :offset="1">
         <el-input placeholder="添加子route"  v-model="pathname">
@@ -57,6 +57,19 @@
               message: '已取消删除'
             });
           }); 
+      },
+      myaddRouter(){ 
+        for(let item of this.nowroute.children){
+            if(item.path === this.pathname){
+              this.$message({
+              type: 'info',
+              message: 'path已存在'
+            });
+              return false;
+            }
+        }
+        this.addRouter(this.pathname);
+        this.pathname = '';
       },
       ...mapMutations([
           'addRouter',

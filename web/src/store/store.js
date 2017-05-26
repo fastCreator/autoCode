@@ -1,8 +1,9 @@
 import vue from 'vue';
-
+import {getState} from '../server/state'
+ 
 export const state = {
   zoom: 0.8,
-  routes: [{
+  routes: [getState()||{
     path: 'main',
     component: {},
     children: [],
@@ -12,21 +13,22 @@ export const state = {
   components: [],
   right1select: 'routes',
   right2select: [
-    'layout', 'router', 'color', 'import',
+    'routes','layout', 'router', 'color', 'import',
     'state', 'API', 'data', 'computed', 'methods',
     'lefe', 'ajax', 'routerhook', 'template'],
 }
 
-state.nowroute = state.routes[0];
 
+
+state.nowroute = state.routes[0]; 
 
 export const getters = {
 }
 
 export const mutations = {
-  right1go(state, value) {
-    state.right1select = value[0]
-    state.nowroute = value[1]
+  right1go(state, value) { 
+    state.right1select = value.type 
+    if(value.route)state.nowroute = value.route
   },
   setzoom(state, value) {
     state.zoom = value
@@ -58,6 +60,5 @@ export const mutations = {
 export const actions = {
 
 }
-
 
 
