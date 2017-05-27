@@ -56,7 +56,7 @@ export default [
             type: 'computed',
           },
           {
-            name: 'methods',
+            name: '方法',
             type: 'methods',
           },
           {

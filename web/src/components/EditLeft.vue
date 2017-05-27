@@ -28,10 +28,10 @@
         return true;
       },
       routerClick(item, data, node) {
-        this.right1go({type:'routes',route:item});
+        this.vuexright1go({type:'routes',route:item});
       },
       ...mapMutations([
-        'right1go'
+        'vuexright1go'
       ])
     },
     data() {

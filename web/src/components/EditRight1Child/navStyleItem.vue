@@ -1,7 +1,7 @@
 <template>
   <div class="cssItem">
-    <el-autocomplete class="inline-input" v-model="cssKey" :fetch-suggestions="querySearchKey" placeholder="样式key" :trigger-on-focus="false"></el-autocomplete>
-    <el-autocomplete class="inline-input" v-model="cssValue" :fetch-suggestions="querySearchValue" placeholder="样式value"></el-autocomplete>
+    <el-autocomplete class="inline-input" @blur="blur" v-model="cssKey" :fetch-suggestions="querySearchKey" placeholder="样式key" :trigger-on-focus="false"></el-autocomplete>
+    <el-autocomplete class="inline-input"  v-model="cssValue" :fetch-suggestions="querySearchValue" placeholder="样式value"></el-autocomplete>
   </div>
 </template>
 
@@ -20,8 +20,6 @@
     computed: {
       cssKey: {
         get: function() {
-          console.log(123123)
-          console.log(this.css)
           return this.css.cssKey
         },
         set: function(v) {
@@ -38,6 +36,10 @@
       }
     },
     methods: {
+      blur(){
+        console.log(1234);
+        this.$emit('blurcssKey',this.css);
+      },
       querySearchKey(queryString, cb) {
         var key = [];
         css.forEach(function(item) {

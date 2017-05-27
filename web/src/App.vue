@@ -37,7 +37,7 @@
     border-bottom: 1px solid #bfbfbf;
   }
   #app {
-    font-family: "PingHei","Lucida Grande","Lucida Sans Unicode","Helvetica","Arial","Verdana","sans-serif","Microsoft Yahei","微软雅黑";
+    font-family: "PingHei", "Lucida Grande", "Lucida Sans Unicode", "Helvetica", "Arial", "Verdana", "sans-serif", "Microsoft Yahei", "微软雅黑";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -80,10 +80,24 @@
     background: #2D353D;
     overflow: auto;
   }
-  .wid100{
-    width:100% !important
+</style>
+<style>
+  .el-row {
+    margin-top: 10px;
   }
-  .el-tree .is-current{
+  .wid100 {
+    width: 100% !important
+  }
+  .el-tree .is-current {
     background: #E4E8F1;
+  }
+  hr{
+    margin-top:10px;
+    height:2px;
+    border:none;
+    border-top:1px dotted #185598;
+  }
+  .el-row .el-col{
+        line-height: 36px;
   }
 </style>

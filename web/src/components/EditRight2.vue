@@ -1,7 +1,7 @@
 <template>
   <div class="editright2">
     <template v-for="item of right2nav">
-                    <div v-show="~right2select.indexOf(item.type)" @click="right1go(item)">{{item.name}}</div>
+                    <div v-show="~right2select.indexOf(item.type)" @click="vuexright1go(item)">{{item.name}}</div>
 </template>
   </div>
 </template>
@@ -24,7 +24,7 @@
     },
     methods: {
       ...mapMutations([
-          'right1go'
+          'vuexright1go'
         ])
       }
     }

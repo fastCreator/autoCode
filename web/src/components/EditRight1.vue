@@ -12,6 +12,7 @@
   import nav from '../config/nav'
   import navStyle from './EditRight1Child/navStyle'
   import navRoutes from './EditRight1Child/navRoutes'
+  import navMethods from './EditRight1Child/navMethods'
   export default {
     name: 'edit-right1',
     data() {
@@ -19,8 +20,8 @@
     },
     computed: {
       ...mapState(['right1select']),
-      title(){ 
-        for(let item of nav){ 
+      title(){
+        for(let item of nav){
             if(item.type ===this.right1select){
                  return item.name;
             }
@@ -30,7 +31,8 @@
     },
     components: {
       navStyle,
-      navRoutes
+      navRoutes,
+      navMethods
     }
   }
 </script>

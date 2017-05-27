@@ -1,59 +1,95 @@
 import vue from 'vue';
-import {getState} from '../server/state'
- 
+import { getState } from '../server/state'
+
+const noon = function () { }
+
+const nullComponent = {
+  //数据
+  data: {},
+  props: [],
+  propsData: {},
+  computed: {},
+  methods: {},
+  watch: {},
+  //生命周期
+  beforeCreate: noon,
+  created: noon,
+  beforeMount: noon,
+  mounted: noon,
+  beforeUpdate: noon,
+  updated: noon,
+  activated: noon,
+  deactivated: noon,
+  beforeDestroy: noon,
+  destroyed: noon,
+  //dom
+  template:'',
+  render:noon,
+  //资源
+  components:{},
+  //杂项
+  name:'',
+  //添加
+  class:'',
+}
+
 export const state = {
+  testcss:[],
   zoom: 0.8,
-  routes: [getState()||{
+  routes: [getState() || {
     path: 'main',
-    component: {},
+    component: nullComponent,
     children: [],
     parent: null
   }],
   nowroute: null,
-  components: [],
-  right1select: 'routes',
+  right1select: 'style',
   right2select: [
-    'routes','layout', 'router', 'color', 'import',
+    'style', 'routes', 'layout', 'router', 'color', 'import',
     'state', 'API', 'data', 'computed', 'methods',
     'lefe', 'ajax', 'routerhook', 'template'],
 }
 
 
 
-state.nowroute = state.routes[0]; 
+
+state.nowroute = state.routes[0];
 
 export const getters = {
 }
 
 export const mutations = {
-  right1go(state, value) { 
-    state.right1select = value.type 
-    if(value.route)state.nowroute = value.route
+  vuexright1go(state, value) {
+    state.right1select = value.type
+    if (value.route) state.nowroute = value.route
   },
-  setzoom(state, value) {
+  vuexsetzoom(state, value) {
     state.zoom = value
   },
-  addRouter(state, value) { 
+  vuexaddRouter(state, value) {
     state.nowroute.children.push({
       path: value,
-      component: {},
+      component: nullComponent,
       children: [],
       parent: state.nowroute
     }
     )
   },
-  deleteRouter(state, value) {
-    var p =state.nowroute.parent;
-    for(let key in  p.children){
-        if(state.nowroute === p.children[key])
-        vue.delete(p.children,key);
-        state.nowroute =p; 
-        return ;
+  vuexdeleteRouter(state, value) {
+    var p = state.nowroute.parent;
+    for (let key in p.children) {
+      if (state.nowroute === p.children[key])
+        vue.delete(p.children, key);
+      state.nowroute = p;
+      return;
     }
-    
+
   },
-  setrouterPath(state,value){ 
-    state.nowroute.path =value;  
+  vuexsetrouterPath(state, value) {
+    state.nowroute.path = value;
+  },
+  vuexpush(state,value){
+    value.target.push(value.value);
   }
 }
 

@@ -19,3 +19,23 @@ pages:[]
 
 
 代码与页面统一(前端可能由于文件命名不规范或文件夹过于复杂而导致无法找到文件与视图统一)
+
+
+寻找一款合适编辑器
+
+route:path,add,delete,异步路由
+routehook:
+
+
+全局:class(font,颜色),全局组件(所有地方都能用的组件),全局指令，全局过滤器，导包
+路由:
+	route:path,add,delete,(开关)异步路由,路由回调,导包,
+	store:,导包,state,action,mutation,函数,
+	(本地)组件:(上面可选组件，下面已选组件列表),
+	template:'<div class="pathname"><layout></layout></div>'， 
+组件:(style)=>,属性,事件,bind
+
+左键选择组件
+右键生成级联，添加组件，布局(自动修改template);技术框架 parsehtml render->html
+
+css style 上面加上全局颜色值

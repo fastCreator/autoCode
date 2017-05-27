@@ -2,7 +2,7 @@
   <div class="editheader">
     <div class="tools">
       <span>全局Router钩子</span> 缩放:
-      <el-slider :value="zoom" @input="setzoom" :min="0.5" :max="1.5" :step="0.01"></el-slider>
+      <el-slider :value="zoom" @input="vuexsetzoom" :min="0.5" :max="1.5" :step="0.01"></el-slider>
       <span @click="saveRoutes">保存</span>
     </div>
   </div>
@@ -23,7 +23,7 @@
     },
     methods: {
       ...mapMutations([
-        'setzoom'
+        'vuexsetzoom'
       ]),
       saveRoutes(){
         this.$message({
