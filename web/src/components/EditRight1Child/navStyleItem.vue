@@ -1,7 +1,7 @@
 <template>
   <div class="cssItem">
-    <el-autocomplete class="inline-input" @blur="blur" v-model="cssKey" :fetch-suggestions="querySearchKey" placeholder="样式key" :trigger-on-focus="false"></el-autocomplete>
-    <el-autocomplete class="inline-input"  v-model="cssValue" :fetch-suggestions="querySearchValue" placeholder="样式value"></el-autocomplete>
+    <el-autocomplete ref="autocomplete" class="inline-input" v-model="cssKey" :fetch-suggestions="querySearchKey" placeholder="样式key" :trigger-on-focus="false"></el-autocomplete>
+    <el-autocomplete class="inline-input" v-model="cssValue" :fetch-suggestions="querySearchValue" placeholder="样式value"></el-autocomplete>
   </div>
 </template>
 
@@ -13,8 +13,7 @@
   export default {
     name: 'css-item',
     data() {
-      return {
-      }
+      return {}
     },
     props: ['css'],
     computed: {
@@ -35,11 +34,12 @@
         }
       }
     },
+    watch: {
+      cssKey(n, o) {
+        console.log(n, o);
+      }
+    },
     methods: {
-      blur(){
-        console.log(1234);
-        this.$emit('blurcssKey',this.css);
-      },
       querySearchKey(queryString, cb) {
         var key = [];
         css.forEach(function(item) {
@@ -52,7 +52,6 @@
         cb(key);
       },
       querySearchValue(queryString, cb) {
-        console.log('a' + queryString)
         var key = [];
         var onecss = '';
         var that = this;
@@ -84,7 +83,15 @@
         cb(key);
       }
     },
-    created() {}
+    created() {},
+    beforeMount() {
+      var that =this;
+      this.$nextTick(function() {  
+        this.$refs.autocomplete.$refs.input.$on('blur', function() { 
+             that.$emit('blurcssKey',that.cssKey);
+        });
+      });
+    }
   }
 </script>
 
