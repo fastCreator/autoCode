@@ -59,7 +59,7 @@
     bottom: 0;
     left: 240px;
     right: 430px;
-    background: #CCCCCC;
+    background:url('/static/transparent.jpg') repeat;
     overflow: auto;
   }
   .editright1 {
@@ -87,6 +87,11 @@
   }
   .wid100 {
     width: 100% !important
+  } 
+  .clearfix:after{
+    content:'';
+    display:block; 
+    clear:both;
   }
   .el-tree .is-current {
     background: #E4E8F1;

@@ -43,7 +43,7 @@ export const state = {
     parent: null
   }],
   nowroute: null,
-  right1select: 'style',
+  right1select: 'layout',
   right2select: [
     'style', 'routes', 'layout', 'router', 'color', 'import',
     'state', 'API', 'data', 'computed', 'methods',
