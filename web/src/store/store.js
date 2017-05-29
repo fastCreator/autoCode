@@ -3,7 +3,10 @@ import { getState } from '../server/state'
 
 const noon = function () { }
 
-const nullComponent = {
+
+
+function getNullComponent(){
+  return {
   //数据
   data: {},
   props: [],
@@ -23,7 +26,7 @@ const nullComponent = {
   beforeDestroy: noon,
   destroyed: noon,
   //dom
-  template:'',
+  template:'', 
   render:noon,
   //资源
   components:{},
@@ -32,18 +35,19 @@ const nullComponent = {
   //添加
   class:'',
 }
+}
 
 export const state = {
   testcss:[],
   zoom: 0.8,
   routes: [getState() || {
     path: 'main',
-    component: nullComponent,
+    component: getNullComponent(),
     children: [],
     parent: null
   }],
   nowroute: null,
-  right1select: 'layout',
+  right1select: 'template',
   right2select: [
     'style', 'routes', 'layout', 'router', 'color', 'import',
     'state', 'API', 'data', 'computed', 'methods',
@@ -69,7 +73,7 @@ export const mutations = {
   vuexaddRouter(state, value) {
     state.nowroute.children.push({
       path: value,
-      component: nullComponent,
+      component: getNullComponent(),
       children: [],
       parent: state.nowroute
     }

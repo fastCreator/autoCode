@@ -2,6 +2,10 @@ export default [
           {
               name:'路由',
               type:'routes' 
+          }, 
+          {
+            name:'模板',
+            type:'template'
           },
           {
             //用于选择和添加布局
@@ -70,10 +74,6 @@ export default [
           {
             name:'router钩子',
             type:'routerhook'
-          },
-          {
-            name:'模板',
-            type:'template'
           },
           {
             name:'样式',

@@ -13,7 +13,8 @@
   import navStyle from './EditRight1Child/navStyle'
   import navRoutes from './EditRight1Child/navRoutes'
   import navMethods from './EditRight1Child/navMethods'
-   import navLayout from './EditRight1Child/navLayout'
+  import navLayout from './EditRight1Child/navLayout'
+  import navTemplate from './EditRight1Child/navTemplate'
   export default {
     name: 'edit-right1',
     data() {
@@ -34,7 +35,8 @@
       navStyle,
       navRoutes,
       navMethods,
-      navLayout
+      navLayout,
+      navTemplate
     }
   }
 </script>

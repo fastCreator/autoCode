@@ -3,8 +3,9 @@
     <div class="item" v-for="item in layouts">
       <div class="img clearfix"><img :src="item.img"></div>
       <div class="font">
-      <div><span class="title">名称:</span>{{item.name}}</div>
+      <div><span class="title">名称:</span>{{item.label}}</div>
       <div><span class="title">属性:</span>{{item.props.join(',')}}</div>
+      <div><span class="title">slot:</span>{{item.slot.join(',')}}</div>
       <div><span class="title">说明:</span></div>
       <template v-for="sm in item.Instructions"> 
           <span class="sm">{{sm}}</span>

@@ -30,11 +30,16 @@
   * {
     margin: 0;
     padding: 0;
+    font-size: 12px;
   }
   .editheader {
     height: 70px;
     background-color: #ededed;
     border-bottom: 1px solid #bfbfbf;
+  }
+  html,
+  body {
+    overflow: hidden;
   }
   #app {
     font-family: "PingHei", "Lucida Grande", "Lucida Sans Unicode", "Helvetica", "Arial", "Verdana", "sans-serif", "Microsoft Yahei", "微软雅黑";
@@ -59,7 +64,7 @@
     bottom: 0;
     left: 240px;
     right: 430px;
-    background:url('/static/transparent.jpg') repeat;
+    background: url('/static/transparent.jpg') repeat;
     overflow: auto;
   }
   .editright1 {
@@ -87,22 +92,25 @@
   }
   .wid100 {
     width: 100% !important
-  } 
-  .clearfix:after{
-    content:'';
-    display:block; 
-    clear:both;
+  }
+  .clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
   }
   .el-tree .is-current {
     background: #E4E8F1;
   }
-  hr{
-    margin-top:10px;
-    height:2px;
-    border:none;
-    border-top:1px dotted #185598;
+  hr {
+    margin-top: 10px;
+    height: 2px;
+    border: none;
+    border-top: 1px dotted #185598;
   }
-  .el-row .el-col{
-        line-height: 36px;
+  .el-row .el-col {
+    line-height: 36px;
+  }
+  .el-row .el-textarea__inner {
+    font-size: 12px;
   }
 </style>

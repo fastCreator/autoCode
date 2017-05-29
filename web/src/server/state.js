@@ -1,8 +1,8 @@
 export const getState = () => {
-    var routers = localStorage.routers;
-    if(routers){
-        return parse(JSON.parse(localStorage.routers))
-    }
+    // var routers = localStorage.routers;
+    // if(routers){
+    //     return parse(JSON.parse(localStorage.routers))
+    // }
     return '';
 }
 

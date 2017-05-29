@@ -5,6 +5,7 @@ import './components'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import './utils/proto'
+import './utils/document'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)

@@ -1,13 +1,13 @@
 <template>
   <div class="layout-sys">
-    <div class="left" :style="{width:leftWidth+'px'}">
+    <div class="left" :style="{width:leftWidth+'px'}" data-slot="left">
       <slot name="left"></slot>
     </div>
     <div class="right" :style="{left:leftWidth+'px'}">
-      <div class="top" :style="{height:topHeight+'px'}">
+      <div class="top" :style="{height:topHeight+'px'}" data-slot="top">
         <slot name="top"></slot>
       </div>
-      <div class="content" :style="{top:topHeight+'px'}">
+      <div class="content" :style="{top:topHeight+'px'}" data-slot="content">
         <slot name="content"></slot>
       </div>
     </div>
