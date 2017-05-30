@@ -13,6 +13,10 @@ export default [
             type: 'layout',
           },
           {
+            name:'组件',
+            type:'components'
+          },
+          {
             //用于选择路由
             name: '全局Router',
             type: 'router',

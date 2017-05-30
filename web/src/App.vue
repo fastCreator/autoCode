@@ -31,6 +31,7 @@
     margin: 0;
     padding: 0;
     font-size: 12px;
+    user-select: none;
   }
   .editheader {
     height: 70px;
@@ -72,7 +73,7 @@
     top: 70px;
     bottom: 0;
     right: 70px;
-    width: 360px;
+    min-width: 360px;
     background: #FAFAFA;
     overflow: auto;
   }

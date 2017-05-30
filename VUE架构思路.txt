@@ -1,4 +1,4 @@
-1，页面路由必须打平
+﻿1，页面路由必须打平
 2，历史过程存储（vuex中）
 3，每个单页面拥有store
 4，单页面store必须注释作用
@@ -39,3 +39,14 @@ routehook:
 右键生成级联，添加组件，布局(自动修改template);技术框架 parsehtml render->html
 
 css style 上面加上全局颜色值
+
+
+代码编辑器：codemirror  11.4
+		codemirror 15
+
+http://blog.csdn.net/cuixiping/article/details/6278645
+
+
+
+选用 ace edit
+参考案列  https://github.com/wjpeters/vue2-ace-code-editor

@@ -2,13 +2,24 @@
   <div class="nav-template">
     <el-row>
       <el-col :span="15" :offset="1">
-        <el-select v-model="select" filterable placeholder="从光标处快速添加布局">
-          <el-option v-for="(item,index) in options" :key="item.value" :label="item.label" :value="index">
+        <el-select v-model="selectLayout" filterable placeholder="从光标处快速添加布局">
+          <el-option v-for="(item,index) in layouts" :key="item.value" :label="item.label" :value="index">
           </el-option>
         </el-select>
       </el-col>
       <el-col :span="6" :offset="1">
-        <el-button type="primary" @click="addTem">添加布局</el-button>
+        <el-button type="primary" @click="addCmp">添加布局</el-button>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="15" :offset="1">
+        <el-select v-model="selectCmp" filterable placeholder="从光标处快速添加组件">
+          <el-option v-for="(item,index) in components" :key="item.value" :label="item.label" :value="index">
+          </el-option>
+        </el-select>
+      </el-col>
+      <el-col :span="6" :offset="1">
+        <el-button type="primary" @click="addLayout">添加组件</el-button>
       </el-col>
     </el-row>
     <el-row>
@@ -30,7 +41,8 @@
     mapMutations
   } from 'vuex'
   import {
-    layouts
+    layouts,
+    components
   } from '../../components'
   import {
     HTMLFormat
@@ -38,9 +50,11 @@
   export default {
     name: 'nav-template',
     data() {
-      return {
-        select: '',
-        options: layouts
+      return { 
+        selectLayout:'',
+        selectCmp:'',
+        layouts: layouts,
+        components:components
       }
     },
     beforeMount() {
@@ -50,12 +64,16 @@
       format() {
         this.nowroute.component.template = HTMLFormat(this.nowroute.component.template)
       },
-      addTem() {
-        var demo = layouts[this.select].demo;
+      addCmp(){
+        this.addTem(layouts[this.selectLayout].demo)
+      },
+      addLayout(){
+        this.addTem(components[this.selectCmp].demo)
+      },
+      addTem(demo) { 
         if (!demo) {
           return false;
-        }
-       
+        } 
         var that = this;
         function getTxt1CursorPosition() {
            var cursurPosition = 0;
