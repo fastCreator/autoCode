@@ -50,3 +50,5 @@ http://blog.csdn.net/cuixiping/article/details/6278645
 
 选用 ace edit
 参考案列  https://github.com/wjpeters/vue2-ace-code-editor
+
+暂时停止 研究源码
